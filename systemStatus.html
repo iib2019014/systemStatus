@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status | Is it working?</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fauna+One&display=swap');
+
+        body {
+            font-family: 'Fauna One', serif;
+        }
+
+        #head {
+            color: green;
+        }
+
+        #content {
+            width: 45%;
+            margin: auto;
+
+            border: 2px solid rgb(17, 143, 0);
+
+            padding: 1rem;
+        }
+
+        hr {
+            background-color: rgb(17, 143, 0);
+        }
+
+        #box {
+            width: 100%;
+            height: 50vh;
+
+            background-color: rgb(187, 255, 179);
+
+            display: flex;
+            justify-content: center;
+        }
+
+        #status-bar {
+            width: 40%;
+            height: 4vh;
+            margin: auto;
+
+            padding: .2rem 0 .2rem 0rem;
+            
+            background-color: rgb(255, 255, 255);
+
+            box-shadow: 0px 30px 20px -5px rgb(177, 177, 177);
+
+            overflow: hidden;
+        }
+
+        #completion {
+            width: 100%;
+            height: 100%;
+
+            background-color: green;
+        }
+
+        @keyframes completion-starts {
+            0% {
+                left: -300px;
+            }
+
+            35%, 45% {
+                left: -175px;
+            }
+
+            50%, 60% {
+                left: -145px;
+            }
+
+            65% {
+                left: -100px;
+            }
+
+            75% {
+                left: -25px;
+            }
+
+            100% {
+                left: 0px;
+            }
+        }
+
+        .completion-started {
+            position: relative;
+            
+            animation-name: completion-starts;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="content">
+            <div id="head">
+                <h1>System Status</h1>
+                <p>Answers the question: <span id="ans">Is it working?</span></p>
+                <hr>
+            </div>
+
+            <div id="box">
+                <div id="status-bar">
+                    <div id="completion" class="completion-started">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
